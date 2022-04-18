@@ -1,0 +1,626 @@
+{
+	"info": {
+		"_postman_id": "01d25a95-eabb-4009-812c-3d8564e12c34",
+		"name": "PheedLoop.assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "text",
+							"value": "Hi, This is A",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "parent_id",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "text",
+							"value": "Hi A, I am B",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "parent_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "text",
+							"value": "Hi A and B, I am C",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "parent_id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "text",
+							"value": "I love this!",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "parent_id",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "text",
+							"value": "Me too!",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "parent_id",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/?id=1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "text",
+							"value": "Me too!",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "parent_id",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/?id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "text",
+							"value": "Comment for deleting",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "parent_id",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_NOT\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "text",
+							"value": "Comment for editing",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "parent_id",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "text",
+							"value": "Comment for editing. EDITED",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "parent_id",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "testUser2",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "password2",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "text",
+							"value": "Comment for testing authentication",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "parent_id",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "username",
+						"value": "testUser2",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "password2",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "9",
+							"type": "text"
+						},
+						{
+							"key": "text",
+							"value": "Comment for testing authentication. EDITED.",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "3",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "parent_id",
+							"value": "0",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "username",
+						"value": "testUser2",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "password2",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		}
+	]
+}

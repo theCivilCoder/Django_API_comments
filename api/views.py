@@ -21,24 +21,19 @@ def createUser():
     User.objects.create_user("testUser2", "zhuyj@ucalgary.ca", "password2")
 
 
+"""
+Authenticates the user by checking the username and password saved in the request header.
+Returns True if registered user is found.
+Returns False if registered user is not found.
+"""
 def isValidUser(request):
-    # print("request.META = ")
-    # print(request.META)
-    # print("request.META['HTTP_USERNAME'] = ")
-    # print(request.META['HTTP_USERNAME'])
-    # print("request.META['HTTP_PASSWORD'] = ")
-    # print(request.META['HTTP_PASSWORD'])
-
     username = request.META['HTTP_USERNAME']
     password = request.META['HTTP_PASSWORD']
 
     user = authenticate(username=username, password=password)
-    # print("user = ")
-    # print(user)
 
     if user == None:
         return False
-    
     return True
 
 
@@ -48,7 +43,7 @@ class CommentsView(APIView):
     password = "password"
 
     # """
-    # Get all comments
+    # Get all comments from the database table
     # """
     # def get(self, request, *args, **kwargs):
     #     qs = Comment.objects.all()
@@ -68,25 +63,22 @@ class CommentsView(APIView):
         # #Uncomment out below to create the User used for Basic Authentication
         # createUser()
 
-        # #Testing authentication without any changes
+        # #Testing authentication without any changes to the database table
         # isAuthenticated = isValidUser(request)
-
         # if isAuthenticated == False:
         #     return Response(["Failed to authenticate"])
         
         # list stores the comment and all coresponding replies        
         all_comments = []
 
+        # Get the first comment based on id from api call
         current_comment_id = request.GET.get('id')
         if (current_comment_id == None):
             return Response(all_comments)
 
-        # Get the first comment based on id from api call
         qs = Comment.objects.raw(
                 "SELECT * FROM comments_api_comment WHERE id=" + current_comment_id)
         serializer = CommentSerializer(qs, many=True)
-        # print("\n serializer.data = ")
-        # print(serializer.data)
         all_comments += serializer.data
 
         # Get all the replies
@@ -94,10 +86,8 @@ class CommentsView(APIView):
             qs = Comment.objects.raw(
                 "SELECT * FROM comments_api_comment WHERE parent_id=" + str(current_comment_id))
             serializer = CommentSerializer(qs, many=True)
-            # print("\n serializer.data = ")
-            # print(serializer.data)
 
-            # no more replies found
+            # if no more replies found
             if len(serializer.data) == 0:
                 break
 
@@ -107,11 +97,11 @@ class CommentsView(APIView):
         return Response(all_comments)
 
     """
-    Save a comment which can be a brand new comment (parent_id=None) or a reply (parent_id is not None) 
+    Save a comment which can be a brand new comment (parent_id=0) or a reply (parent_id is not 0) 
     """
     def post(self, request, *args, **kwargs):
+        # Check if valid username and password are included in the request header
         isAuthenticated = isValidUser(request)
-
         if isAuthenticated == False:
             return Response(["Failed to authenticate"])
 
@@ -122,11 +112,11 @@ class CommentsView(APIView):
         return Response(serializer.errors)
 
     """
-    Delete a comment based on a id
+    Delete a comment based on an id
     """
     def delete(self, request):
+        # Check if valid username and password are included in the request header
         isAuthenticated = isValidUser(request)
-
         if isAuthenticated == False:
             return Response(["Failed to authenticate"])
 
@@ -142,6 +132,7 @@ class CommentsView(APIView):
             comment.delete()
             res = {'msg':'Comment with this id was deleted.'}
         except Exception as e:
+            #Failed to find an object given the id included in the request body
             print(f"Error: api.views -> delete(): {e}")
 
         json_data = JSONRenderer().render(res)
@@ -151,8 +142,8 @@ class CommentsView(APIView):
     Update a comment based on the id
     """
     def put(self, request):
+        # Check if valid username and password are included in the request header
         isAuthenticated = isValidUser(request)
-
         if isAuthenticated == False:
             return Response(["Failed to authenticate"])
 
@@ -167,6 +158,7 @@ class CommentsView(APIView):
             res = {'msg':'Comment with this id was updated.'}
 
         except Exception as e:
+            #Failed to find an object given the id included in the request body
             print(f"Error: api.views -> put(): {e}")
 
 
